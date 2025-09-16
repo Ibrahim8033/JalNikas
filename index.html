@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Drainage & Waterlogging Watch Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(0, 0%, 100%)',
+                        foreground: 'hsl(222.2, 84%, 4.9%)',
+                        primary: 'hsl(221, 83%, 53%)',
+                        primaryforeground: 'hsl(210, 40%, 98%)',
+                        secondary: 'hsl(210, 40%, 96%)',
+                        secondaryforeground: 'hsl(222.2, 84%, 4.9%)',
+                        muted: 'hsl(210, 40%, 96%)',
+                        mutedforeground: 'hsl(215.4, 16.3%, 46.9%)',
+                        accent: 'hsl(210, 40%, 96%)',
+                        accentforeground: 'hsl(222.2, 84%, 4.9%)',
+                        card: 'hsl(0, 0%, 100%)',
+                        cardforeground: 'hsl(222.2, 84%, 4.9%)',
+                        border: 'hsl(214.3, 31.8%, 91.4%)',
+                        input: 'hsl(214.3, 31.8%, 91.4%)',
+                        ring: 'hsl(221, 83%, 53%)'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+    <header class="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-xl font-bold text-primary"><i class="fas fa-water mr-2"></i>DrainageWatch</h1>
+                    </div>
+                </div>
+
+                <nav class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#features" class="text-foreground transition-colors hover:text-primary">Features</a>
+                        <a href="#how-it-works" class="text-foreground transition-colors hover:text-primary">How It Works</a>
+                        <a href="#dashboard" class="text-foreground transition-colors hover:text-primary">Dashboard</a>
+                        <a href="#analytics" class="text-foreground transition-colors hover:text-primary">Analytics</a>
+                        <a href="#community" class="text-foreground transition-colors hover:text-primary">Community</a>
+                    </div>
+                </nav>
+
+                <div class="hidden md:block">
+                    <button class="bg-primary text-primaryforeground py-2 px-4 rounded-md hover:bg-primary/90 transition-colors">Get Started</button>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-foreground hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-border">
+                <div class="flex flex-col space-y-3">
+                    <a href="#features" class="px-3 py-2 text-foreground hover:text-primary">Features</a>
+                    <a href="#how-it-works" class="px-3 py-2 text-foreground hover:text-primary">How It Works</a>
+                    <a href="#dashboard" class="px-3 py-2 text-foreground hover:text-primary">Dashboard</a>
+                    <a href="#analytics" class="px-3 py-2 text-foreground hover:text-primary">Analytics</a>
+                    <a href="#community" class="px-3 py-2 text-foreground hover:text-primary">Community</a>
+                    <button class="bg-primary text-primaryforeground py-2 px-4 rounded-md hover:bg-primary/90 transition-colors mt-2">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative py-16 md:py-24 lg:py-32 bg-gradient-to-br from-primary/5 to-secondary/30">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Urban Drainage & Waterlogging <span class="text-primary">Watch Platform</span></h1>
+                        <p class="text-lg text-mutedforeground mb-8">Monitor, predict, and manage urban drainage systems to prevent waterlogging and protect communities from flood risks.</p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-primary text-primaryforeground py-3 px-6 rounded-md hover:bg-primary/90 transition-colors font-medium">Get Started</button>
+                            <button class="border border-border bg-background py-3 px-6 rounded-md hover:bg-accent transition-colors font-medium">View Demo</button>
+                        </div>
+                    </div>
+                    <div class="order-first lg:order-last">
+                        <img src="/First.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section id="features" class="py-16 md:py-24 bg-background">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Key Features</h2>
+                    <p class="text-mutedforeground">Our platform offers comprehensive tools for urban water management and flood prevention</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-card p-6 rounded-lg border border-border card-hover">
+                        <div class="feature-icon bg-primary/10 text-primary mb-4">
+                            <i class="fas fa-tachometer-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Real-time Monitoring</h3>
+                        <p class="text-mutedforeground">Monitor water levels, flow rates, and system status in real-time across your entire drainage network.</p>
+                    </div>
+
+                    <div class="bg-card p-6 rounded-lg border border-border card-hover">
+                        <div class="feature-icon bg-primary/10 text-primary mb-4">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Predictive Analytics</h3>
+                        <p class="text-mutedforeground">Advanced algorithms predict potential flooding events before they happen, enabling proactive measures.</p>
+                    </div>
+
+                    <div class="bg-card p-6 rounded-lg border border-border card-hover">
+                        <div class="feature-icon bg-primary/10 text-primary mb-4">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Community Reporting</h3>
+                        <p class="text-mutedforeground">Citizens can report waterlogging issues directly through our mobile app, enhancing response times.</p>
+                    </div>
+
+                    <div class="bg-card p-6 rounded-lg border border-border card-hover">
+                        <div class="feature-icon bg-primary/10 text-primary mb-4">
+                            <i class="fas fa-trophy text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Leaderboard & Rewards</h3>
+                        <p class="text-mutedforeground">Engage community members with rewards for reporting issues and participating in flood prevention initiatives.</p>
+                    </div>
+
+                    <div class="bg-card p-6 rounded-lg border border-border card-hover">
+                        <div class="feature-icon bg-primary/10 text-primary mb-4">
+                            <i class="fas fa-map-marked-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">GIS Integration</h3>
+                        <p class="text-mutedforeground">Full geographic information system integration for precise location mapping of drainage assets and issues.</p>
+                    </div>
+
+                    <div class="bg-card p-6 rounded-lg border border-border card-hover">
+                        <div class="feature-icon bg-primary/10 text-primary mb-4">
+                            <i class="fas fa-bell text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Alert System</h3>
+                        <p class="text-mutedforeground">Automated alerts notify authorities and residents of potential flooding risks and system maintenance needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-16 md:py-24 bg-muted">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+                    <p class="text-mutedforeground">Our comprehensive system integrates multiple data sources to provide actionable insights</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="mb-10">
+                            <div class="flex items-start mb-4">
+                                <div class="bg-primary text-primaryforeground rounded-full h-10 w-10 flex items-center justify-center mr-4 flex-shrink-0">1</div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Data Collection</h3>
+                                    <p class="text-mutedforeground">Sensors across the drainage network collect real-time data on water levels, flow rates, and weather conditions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-10">
+                            <div class="flex items-start mb-4">
+                                <div class="bg-primary text-primaryforeground rounded-full h-10 w-10 flex items-center justify-center mr-4 flex-shrink-0">2</div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Analysis & Prediction</h3>
+                                    <p class="text-mutedforeground">AI-powered algorithms analyze the data to predict potential waterlogging and flooding events.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-10">
+                            <div class="flex items-start mb-4">
+                                <div class="bg-primary text-primaryforeground rounded-full h-10 w-10 flex items-center justify-center mr-4 flex-shrink-0">3</div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Alert Generation</h3>
+                                    <p class="text-mutedforeground">The system generates alerts for authorities and notifies at-risk communities through multiple channels.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-start mb-4">
+                                <div class="bg-primary text-primaryforeground rounded-full h-10 w-10 flex items-center justify-center mr-4 flex-shrink-0">4</div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Response Coordination</h3>
+                                    <p class="text-mutedforeground">Emergency services and maintenance teams are coordinated through the platform for efficient response.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <img src="Sec.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Preview -->
+        <section id="dashboard" class="py-16 md:py-24 bg-background">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Interactive Dashboard</h2>
+                    <p class="text-mutedforeground">Monitor your entire drainage system through our intuitive and powerful dashboard</p>
+                </div>
+
+                <div class="bg-card p-6 rounded-lg border border-border">
+                    <div class="mb-6 flex flex-wrap gap-4">
+                        <div class="bg-primary text-primaryforeground px-4 py-2 rounded-md font-medium">Live View</div>
+                        <div class="bg-muted px-4 py-2 rounded-md font-medium">Historical Data</div>
+                        <div class="bg-muted px-4 py-2 rounded-md font-medium">Asset Management</div>
+                        <div class="bg-muted px-4 py-2 rounded-md font-medium">Reports</div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                        <div class="bg-background p-4 rounded-lg border border-border">
+                            <h4 class="font-semibold mb-2">System Status</h4>
+                            <div class="flex items-center mb-2">
+                                <div class="h-3 w-3 bg-green-500 rounded-full mr-2"></div>
+                                <span class="text-sm">92% Operational</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <div class="h-3 w-3 bg-yellow-500 rounded-full mr-2"></div>
+                                <span class="text-sm">5% Maintenance</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="h-3 w-3 bg-red-500 rounded-full mr-2"></div>
+                                <span class="text-sm">3% Offline</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-background p-4 rounded-lg border border-border">
+                            <h4 class="font-semibold mb-2">Recent Alerts</h4>
+                            <div class="mb-2">
+                                <div class="flex justify-between text-sm">
+                                    <span>Blockage detected</span>
+                                    <span class="text-red-500">High</span>
+                                </div>
+                                <div class="w-full bg-muted h-2 rounded-full mt-1">
+                                    <div class="bg-red-500 h-2 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <div class="flex justify-between text-sm">
+                                    <span>Water level rising</span>
+                                    <span class="text-yellow-500">Medium</span>
+                                </div>
+                                <div class="w-full bg-muted h-2 rounded-full mt-1">
+                                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-background p-4 rounded-lg border border-border">
+                            <h4 class="font-semibold mb-2">Weather Forecast</h4>
+                            <div class="flex items-center">
+                                <i class="fas fa-cloud-rain text-blue-500 mr-2"></i>
+                                <span class="text-sm">Heavy rain expected in 3 hours</span>
+                            </div>
+                            <div class="mt-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span>Precipitation:</span>
+                                    <span>85% probability</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Expected rainfall:</span>
+                                    <span>45mm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-background p-4 rounded-lg border border-border">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="font-semibold">Drainage Network Map</h4>
+                            <div class="text-sm text-primary">Live View</div>
+                        </div>
+                        <img src="Third.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analytics" class="py-16 md:py-24 bg-muted">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Predictive Analytics</h2>
+                    <p class="text-mutedforeground">Leverage AI and machine learning to anticipate and prevent waterlogging issues</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="Fourth.png">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6">Advanced Flood Prediction</h3>
+                        <p class="text-mutedforeground mb-6">Our predictive models analyze historical data, weather patterns, and real-time sensor readings to forecast potential flooding events with up to 92% accuracy.</p>
+                        
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Current Risk Level</span>
+                                <span class="font-semibold text-yellow-600">Moderate</span>
+                            </div>
+                            <div class="w-full bg-muted h-3 rounded-full">
+                                <div class="bg-yellow-500 h-3 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-card p-4 rounded-lg border border-border">
+                                <div class="text-2xl font-bold text-primary mb-1">24h</div>
+                                <div class="text-sm">Prediction Window</div>
+                            </div>
+                            <div class="bg-card p-4 rounded-lg border border-border">
+                                <div class="text-2xl font-bold text-primary mb-1">92%</div>
+                                <div class="text-sm">Accuracy Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Forum -->
+        <section id="community" class="py-16 md:py-24 bg-background">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Community Engagement</h2>
+                    <p class="text-mutedforeground">Engage citizens and stakeholders in urban water management efforts</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-card p-6 rounded-lg border border-border text-center card-hover">
+                        <div class="flex justify-center mb-4">
+                            <div class="feature-icon bg-primary/10 text-primary">
+                                <i class="fas fa-comments text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Discussion Forum</h3>
+                        <p class="text-mutedforeground mb-4">Join conversations about urban water management, share experiences, and propose solutions.</p>
+                        <button class="text-primary font-medium">Join Discussion →</button>
+                    </div>
+
+                    <div class="bg-card p-6 rounded-lg border border-border text-center card-hover">
+                        <div class="flex justify-center mb-4">
+                            <div class="feature-icon bg-primary/10 text-primary">
+                                <i class="fas fa-flag text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Issue Reporting</h3>
+                        <p class="text-mutedforeground mb-4">Report drainage issues and waterlogging problems directly through our platform.</p>
+                        <button class="text-primary font-medium">Report Issue →</button>
+                    </div>
+
+                    <div class="bg-card p-6 rounded-lg border border-border text-center card-hover">
+                        <div class="flex justify-center mb-4">
+                            <div class="feature-icon bg-primary/10 text-primary">
+                                <i class="fas fa-trophy text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Leaderboard</h3>
+                        <p class="text-mutedforeground mb-4">Earn points and rewards for active participation and valuable contributions.</p>
+                        <button class="text-primary font-medium">View Leaders →</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 md:py-24 bg-primary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primaryforeground">Ready to transform urban water management?</h2>
+                    <p class="text-primaryforeground/80 mb-8">Join cities worldwide that are using our platform to prevent flooding and manage drainage systems effectively.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="bg-background text-foreground py-3 px-6 rounded-md hover:bg-background/90 transition-colors font-medium">Request a Demo</button>
+                        <button class="border border-primaryforeground text-primaryforeground py-3 px-6 rounded-md hover:bg-primaryforeground/10 transition-colors font-medium">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-card border-t border-border py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4"><i class="fas fa-water mr-2 text-primary"></i>DrainageWatch</h3>
+                    <p class="text-mutedforeground">Advanced urban drainage and waterlogging monitoring platform for modern cities.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-mutedforeground hover:text-primary">Features</a></li>
+                        <li><a href="#" class="text-mutedforeground hover:text-primary">Pricing</a></li>
+                        <li><a href="#" class="text-mutedforeground hover:text-primary">Case Studies</a></li>
+                        <li><a href="#" class="text-mutedforeground hover:text-primary">API</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-mutedforeground hover:text-primary">Documentation</a></li>
+                        <li><a href="#" class="text-mutedforeground hover:text-primary">Blog</a></li>
+                        <li><a href="#" class="text-mutedforeground hover:text-primary">Community</a></li>
+                        <li><a href="#" class="text-mutedforeground hover:text-primary">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-mutedforeground hover:text-primary">About Us</a></li>
+                        <li><a href="#" class="text-mutedforeground hover:text-primary">Careers</a></li>
+                        <li><a href="#" class="text-mutedforeground hover:text-primary">Contact</a></li>
+                        <li><a href="#" class="text-mutedforeground hover:text-primary">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-mutedforeground">© 2023 DrainageWatch. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-mutedforeground hover:text-primary"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-mutedforeground hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-mutedforeground hover:text-primary"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-mutedforeground hover:text-primary"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Simple animation for features on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Animate feature cards
+            document.querySelectorAll('.card-hover').forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
